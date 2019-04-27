@@ -1,0 +1,151 @@
+<template>
+    <Page class="page">
+        <ActionBar title="YelPoll: Where should we go?" flat="false" class="action-bar"
+            color="#212121" backgroundColor="#e00e00" />
+
+        <StackLayout orientation="vertical" width="420" height="2100"
+            backgroundColor="#fbff99">
+            <Image src="https://lh3.googleusercontent.com/vWo0gl5-IgP68xFqB9C6OBtdZ1KPBEL1iGV63YWa-fN-fDMw1CpnvDr0g83ss0a8gF7k5KCZpr7fB7sp7bsHWfmg-sOlZ_vAxWlDlyP-IFdOEhqGF0s6k7BqZFquN7nIeVj0jHeZTVdWk2lPOeftbGMwx3UfmJCvI3GSJP_3jABzYhSD4firq4AJi_AR0BCYvs6N0OMN4es9MWdex25NNerldgQru56iwST_7_A8hmCp6mMzXGCqmTe21SnnsSk4sLlEkMKKNzINYhA9ai-xEZj8Sat9mH6NwnTBVEz1WF0zY3GM-ixlLy3DZpP1v42BF8-siEE4mh6GbWqENZjOqPQH5UPKBQQrhLLiX7ZcUipz0IquWRPcuQ2P5ZOhtixYI6k6qta-24SE2PF7lTH5bQOLszoh4FlVvFN21O7Ck1WaOzeHcPAEFJz_dlsXTJ7DByKapa1gnSXQFBj87MrpBhIacfaNWTESdhDKi8HpbkxiTk6aXwkLOdHEn20dGyUZ2rbpZ0hUQNsc_cBuVOZYEd1ZoAxItiY4cmI52oIFuCVaj7Z7m2pRiE9JhwiUTor1iomBAhDO9ZdcIqH31h8ErWFQXqn8cPw8pqHLfguuN-gSgVBfEpabw8qT2sv2Xty_F8W1TLkzp06pwYDMNgg2V79qNP3Cdq0=w232-h91-no" />
+            <TabView height="1400px">
+                <TabViewItem title="Food">
+                    <ListView class="list-group" for="country in countries"
+                        @itemTap="onItemTap" style="height:1250px">
+                        <v-template>
+                            <FlexboxLayout flexDirection="row" class="list-group-item">
+                                <Image :src="country.imageSrc" class="thumb img-circle" />
+                                <Label :text="country.name" class="list-group-item-heading"
+                                    style="width: 60%" />
+                            </FlexboxLayout>
+                        </v-template>
+                    </ListView>
+                </TabViewItem>
+                <TabViewItem title="Play">
+                    <ListView class="list-group" for="country in countries"
+                        @itemTap="onItemTap" style="height:1250px">
+                        <v-template>
+                            <FlexboxLayout flexDirection="row" class="list-group-item">
+                                <Image :src="country.imageSrc" class="thumb img-circle" />
+                                <Label :text="country.name" class="list-group-item-heading"
+                                    style="width: 60%" />
+                            </FlexboxLayout>
+                        </v-template>
+                    </ListView>
+                </TabViewItem>
+                <TabViewItem title="Nature">
+                    <ListView class="list-group" for="country in countries"
+                        @itemTap="onItemTap" style="height:1250px">
+                        <v-template>
+                            <FlexboxLayout flexDirection="row" class="list-group-item">
+                                <Image :src="country.imageSrc" class="thumb img-circle" />
+                                <Label :text="country.name" class="list-group-item-heading"
+                                    style="width: 60%" />
+                            </FlexboxLayout>
+                        </v-template>
+                    </ListView>
+                </TabViewItem>
+            </TabView>
+            <Button text="Create Poll" @tap="onButtonTap" height=250px color="#212121" backgroundColor="#e00e00" />
+        </StackLayout>
+    </Page>
+</template>
+
+<script>
+    export default {
+        methods: {
+            onButtonTap() {
+                console.log("Button was pressed");
+            },
+
+            onItemTap: function(args) {
+                console.log("Item with index: " + args.index + " tapped");
+            }
+        },
+
+        data() {
+            return {
+                countries: [{
+                        name: "Australia",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/au.png"
+                    },
+                    {
+                        name: "Belgium",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/be.png"
+                    },
+                    {
+                        name: "Bulgaria",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/bg.png"
+                    },
+                    {
+                        name: "Canada",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/ca.png"
+                    },
+                    {
+                        name: "Switzerland",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/ch.png"
+                    },
+                    {
+                        name: "China",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/cn.png"
+                    },
+                    {
+                        name: "Czech Republic",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/cz.png"
+                    },
+                    {
+                        name: "Germany",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/de.png"
+                    },
+                    {
+                        name: "Spain",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/es.png"
+                    },
+                    {
+                        name: "Ethiopia",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/et.png"
+                    },
+                    {
+                        name: "Croatia",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/hr.png"
+                    },
+                    {
+                        name: "Hungary",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/hu.png"
+                    },
+                    {
+                        name: "Italy",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/it.png"
+                    },
+                    {
+                        name: "Jamaica",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/jm.png"
+                    },
+                    {
+                        name: "Romania",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/ro.png"
+                    },
+                    {
+                        name: "Russia",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/ru.png"
+                    },
+                    {
+                        name: "United States",
+                        imageSrc: "https://play.nativescript.org/dist/assets/img/flags/us.png"
+                    }
+                ]
+            };
+        }
+    };
+</script>
+
+<style scoped>
+    .home-panel {
+        vertical-align: center;
+        font-size: 15;
+        margin: 15;
+        background-color: #e3ffb7;
+    }
+
+    .description-label {
+        margin-bottom: 15;
+    }
+</style>
